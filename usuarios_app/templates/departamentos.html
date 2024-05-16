@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for departamento in listaDepartamentos: %}
+        <li> 
+            {{departamento.id}} - {{departamento.nombre}}
+        </li>
+    {% endfor %}
+    <h3>RELACION UNOS A MUCHOS</h3>
+    {% for departamento in departamentosConUsuarios %}
+        <li>
+            {{departamento.id}} - {{departamento.nombre}}:
+                {% for usuario in departamento.usuario %}    
+                    <li> {{usuario.nombre}} - {{usuario.apellido}} </li>
+                {% endfor %}
+        </li>
+        {% endfor %}
+    <form action="/dashboard" method="GET">
+        <button type="submit">
+            Regresar!
+        </button>
+    </form>
+</body>
+</html>

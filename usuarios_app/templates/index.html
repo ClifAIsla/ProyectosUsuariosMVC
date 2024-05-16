@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y login</title>
+</head>
+<body>
+    <h2>REGISTRATE COLABORADOR:</h2>
+    <form action="/registroUsuario" method="POST">
+        <div>
+            <label for="nombre">
+                Nombre:
+            </label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="apellido">
+                Apellido:
+            </label>
+            <input type="text" id="apellido" name="apellido">
+        </div>
+        <div>
+            <label for="usuario">
+                Usuario:
+            </label>
+            <input type="text" id="usuario" name="usuario">
+        </div>
+        <div>
+            <label for="departamento">
+                Departamento:
+            </label>
+            <input type="text" id="departamento" name="departamento">
+        </div>
+        <div>
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button type="submit">
+            Registrar!
+        </button>
+    </form>
+
+    <h2>INICIAR SESIÓN:</h2>
+    <form action="/login" method="POST">
+        <div>
+            <label for="usuarioLogin">
+                Usuario:
+            </label>
+            <input type="text" id="usuarioLogin" name="usuarioLogin">
+        </div>
+        <input type="hidden" value="ptelklolea" id="oculto" name="oculto">
+        <div>
+            <label for="passwordLogin">
+                Password:
+            </label>
+            <input type="password" id="passwordLogin" name="passwordLogin">
+        </div>
+        <button type="submit">
+            Iniciar Sesion!
+        </button>
+    </form>
+</body>
+</html>

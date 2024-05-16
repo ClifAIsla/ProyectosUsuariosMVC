@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITANDO USUARIO</title>
+</head>
+<body>
+    <h1>EDITAR AL {{usuarioActualizar.nombre}} </h1>
+    <form action="/usuario/editar/{{usuarioActualizar.nombreUsuario}}" method="POST">
+        <div>
+            <label for="nombre">
+                Nombre:
+            </label>
+            <input type="text" id="nombre" name="nombre" value={{usuarioActualizar.nombre}}>
+        </div>
+        <div>
+            <label for="apellido">
+                Apellido:
+            </label>
+            <input type="text" id="apellido" name="apellido" value={{usuarioActualizar.apellido}}>
+        </div>
+        <div>
+            <label for="password">
+                Password:
+            </label>
+            <input type="text" id="password" name="password" value={{usuarioActualizar.password}}>
+        </div>
+        <div>
+            <label for="departamento">
+                Departamento:
+            </label>
+            <input type="text" id="departamento" name="departamento">
+        </div>
+        <button type="submit">¡Actualizar datos!</button>
+    </form>
+</body>
+</html>

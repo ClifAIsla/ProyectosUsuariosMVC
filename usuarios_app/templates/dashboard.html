@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>BIENVENIDO DE VUELTA {{session["nombre"]}} {{session["apellido"]}} con ID: {{session["id"]}}</h1>
+    <h3>LISTA DE USUARIOS:
+        {% for usuario in usuarios: %}
+            <li>{{usuario.nombre}} {{usuario.apellido}} 
+                <form action="/usuario/eliminar/{{usuario.nombreUsuario}}" method="POST">
+                    <button>Chau!</button>
+                </form>
+                <form action="/usuario/editar/{{usuario.nombreUsuario}}" method="GET">
+                    <button>Cambiemos tu identidad!</button>
+                </form>
+            </li>
+        {% endfor %}
+
+    <form action="/departamentos" method="GET">
+        <button type="submit">
+            ¡Llevame a tu departamento!
+        </button>
+    </form>
+
+    <form action="/logout" method="GET">
+        <button type="submit">
+            CERRAR SESIÓN MI SOLY {{session['nombre']}}
+        </button>
+        <input type="hidden" name="oculto" 
+        value={{session["id"]}}>
+    </form>
+
+</body>
+</html>
